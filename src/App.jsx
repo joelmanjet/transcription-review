@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import ImageViewer from './components/ImageViewer.jsx';
 import TranscriptionEditor from './components/TranscriptionEditor.jsx';
 
+const paradigmLogo = new URL('../logo/Paradigm.png', import.meta.url).href;
+
 export default function App() {
   const [imageUrl, setImageUrl] = useState(
-    'https://raw.githubusercontent.com/joelmanjet/transcription-review/refs/heads/main/readmepic/image.png',
+    'https://raw.githubusercontent.com/joelmanjet/transcription-review/refs/heads/main/readmepic/tx_100.jpg',
   );
   const [mdUrl, setMdUrl] = useState(
-    'https://raw.githubusercontent.com/joelmanjet/transcription-review/refs/heads/main/readmepic/image.md',
+    'https://raw.githubusercontent.com/joelmanjet/transcription-review/refs/heads/main/readmepic/tx_100.md',
   );
 
   return (
@@ -15,14 +17,10 @@ export default function App() {
       <header className="concordia-header">
         <div className="header-left">
           <div className="brand">
-            <span className="brand-mark">Concordia</span>
+            <img className="brand-logo" src={paradigmLogo} alt="Paradigm" />
             <span className="brand-sub">Transcription Review</span>
           </div>
-          <div className="asset-meta">Christian Fleetwood diary • Page 36</div>
-        </div>
-        <div className="header-actions">
-          <button className="btn btn-ghost">How-To Guide</button>
-          <button className="btn btn-primary">Campaign Tips</button>
+          <div className="asset-meta">Page #100</div>
         </div>
       </header>
 
@@ -41,7 +39,6 @@ export default function App() {
                   Check this transcription thoroughly. Accept if correct.
                 </p>
               </div>
-              <div className="contrib-count">Registered Contributors: 2</div>
             </div>
             <TranscriptionEditor mdUrl={mdUrl} setMdUrl={setMdUrl} />
           </section>
