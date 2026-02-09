@@ -211,6 +211,13 @@ body {
   box-shadow: 0 6px 12px -6px rgba(12, 31, 43, 0.3);
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
 .btn-primary {
   background: var(--gold-500);
   color: #1d1b12;
@@ -304,6 +311,15 @@ body {
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
+}
+
+.editor-error {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(196, 49, 42, 0.1);
+  color: #b12c24;
+  border: 1px solid rgba(196, 49, 42, 0.2);
+  font-size: 13px;
 }
 
 .editor-scroll {

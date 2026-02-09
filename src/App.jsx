@@ -3,8 +3,12 @@ import ImageViewer from './components/ImageViewer.jsx';
 import TranscriptionEditor from './components/TranscriptionEditor.jsx';
 
 export default function App() {
-  const [imageUrl, setImageUrl] = useState('');
-  const [mdUrl, setMdUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState(
+    'https://raw.githubusercontent.com/joelmanjet/transcription-review/refs/heads/main/readmepic/image.png',
+  );
+  const [mdUrl, setMdUrl] = useState(
+    'https://raw.githubusercontent.com/joelmanjet/transcription-review/refs/heads/main/readmepic/image.md',
+  );
 
   return (
     <div className="concordia-shell">
