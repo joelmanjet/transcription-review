@@ -1,0 +1,345 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap');
+
+:root {
+  --navy-900: #0c1f2b;
+  --navy-800: #133043;
+  --navy-700: #1d3f56;
+  --gold-500: #c2a14a;
+  --sand-100: #f4f1ea;
+  --paper-100: #fbfaf7;
+  --ink-900: #1b262d;
+  --ink-600: #4a5a63;
+  --shadow: 0 18px 45px -28px rgba(11, 24, 33, 0.45);
+  --border: rgba(19, 48, 67, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  color: var(--ink-900);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--sand-100) 55%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.concordia-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.concordia-header {
+  background: linear-gradient(120deg, var(--navy-900), var(--navy-700));
+  color: #fff;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.brand-mark {
+  font-family: 'Source Serif 4', 'Times New Roman', serif;
+  font-size: 22px;
+  letter-spacing: 0.4px;
+}
+
+.brand-sub {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.asset-meta {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 13px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.concordia-main {
+  flex: 1;
+  padding: 24px 28px 32px;
+}
+
+.concordia-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  min-height: calc(100vh - 140px);
+}
+
+.panel {
+  background: var(--paper-100);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel--viewer {
+  background: #101820;
+  color: #e7edf2;
+}
+
+.panel--editor {
+  background: var(--paper-100);
+}
+
+.panel-title {
+  padding: 16px 20px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.panel--editor .panel-title {
+  border-bottom: 1px solid var(--border);
+}
+
+.editor-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(194, 161, 74, 0.15);
+  color: #7d5a12;
+  border: 1px solid rgba(194, 161, 74, 0.45);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.editor-instructions {
+  margin: 8px 0 0;
+  color: var(--ink-600);
+  font-size: 14px;
+}
+
+.contrib-count {
+  font-size: 13px;
+  color: var(--ink-600);
+}
+
+.viewer,
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+  gap: 12px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink-900);
+}
+
+.input--dark {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e7edf2;
+}
+
+.viewer-url,
+.editor-url {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px -6px rgba(12, 31, 43, 0.3);
+}
+
+.btn-primary {
+  background: var(--gold-500);
+  color: #1d1b12;
+}
+
+.btn-secondary {
+  background: var(--navy-800);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.btn-accept {
+  background: #1e6f5c;
+  color: #fff;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e7edf2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.viewer-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.viewer-slider {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.range {
+  flex: 1;
+  accent-color: var(--gold-500);
+}
+
+.viewer-stage {
+  flex: 1;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle at top, #1b2730 0%, #101820 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 18px;
+}
+
+.viewer-stage img {
+  max-width: 100%;
+  box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.65);
+  transition: transform 0.2s ease;
+}
+
+.viewer-empty {
+  text-align: center;
+  color: rgba(231, 237, 242, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.editor-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.editor-scroll {
+  flex: 1;
+  overflow: auto;
+}
+
+.editor-preview {
+  padding: 22px 24px;
+  line-height: 1.6;
+  color: var(--ink-900);
+}
+
+.editor-actions {
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #f7f4ee;
+}
+
+@media (max-width: 1100px) {
+  .concordia-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .concordia-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
